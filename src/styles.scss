@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+@include mat-core();
+$chatBox-theme-primary: mat-palette($mat-green, 300);
+$chatBox-theme-accent:  mat-palette($mat-grey, 500);
+$chatBox-theme-warn:    mat-palette($mat-red);
+$chatBox-theme: mat-light-theme($chatBox-theme-primary, $chatBox-theme-accent, $chatBox-theme-warn);
+@include angular-material-theme($chatBox-theme);
+
+html, body {
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+body{
+    margin:0;
+}

@@ -1,0 +1,36 @@
+<mat-toolbar>
+    <div class="header">
+        <form [formGroup]="userNameForm" novalidate>
+            <mat-form-field appearance="outline">
+                <mat-label>Usuário</mat-label>
+                <input matInput formControlName="nome">
+            </mat-form-field>
+            <button mat-flat-button color="primary" (click)="entrarChat(userNameForm.value)">Entrar</button>
+        </form>
+    </div>
+</mat-toolbar>
+
+<div class="wrapper" id="wrapper">
+    <mat-card class="inner">
+        <mat-card-content>
+                <div class="message-wrapper" *ngFor="let mensagem of mensagens">
+                    <div class="text-wrapper">{{mensagem.usuario}}: {{mensagem.mensagem}}</div>
+                </div>
+
+                <div class="bottom">
+                    <form [formGroup]="chatForm" novalidate>
+
+                        <mat-form-field appearance="outline">
+                            <mat-label>Mensagem</mat-label>
+                            <input class="input" matInput formControlName="mensagem">
+                        </mat-form-field>
+                        
+                        <button class="send" (click)="enviarMensagem(chatForm.value)"></button>
+                    
+                    </form>
+                </div>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+
